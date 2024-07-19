@@ -1,0 +1,48 @@
+@charset "utf-8";
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+body {
+  /* width: 800px; */
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 150px;
+}
+
+.layout_wrapper {
+  flex: 1;
+  display: flex;
+}
+main {
+  flex: 1;
+}
+nav {
+  width: 150px;
+}
+aside {
+  width: 200px;
+}
+/* 無限スクロールを用いる際nav,asideの下に移動させる */
+footer {
+  height: 200px;
+}
+/* スクリーンを小さくした場合 */
+@media screen and (max-width: 900px) {
+  body,
+  main,
+  nav,
+  aside {
+    width: 100%;
+  }
+  .layout_wrapper {
+    flex-direction: column;
+  }
+  /* navより前にmainを置く場合 */
+  main {
+    order: -1;
+  }
+}
